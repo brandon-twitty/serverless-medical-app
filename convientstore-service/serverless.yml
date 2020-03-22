@@ -1,0 +1,66 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: convenience-store-service
+frameworkVersion: ">=1.1.0 <2.0.0"
+provider:
+  name: aws
+  runtime: nodejs12.x
+  #profile: serverless
+  region: us-east-2
+  environment:
+    tableName: ${self:custom.tableName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: '*'
+plugins:
+  - serverless-webpack
+#  - serverless-bundle
+package:
+  individually: true
+
+custom:
+  tableName: convenience_store
+
+functions:
+  createConvenienceStore:
+    handler: lambdas/endpoints/createConvenienceStore.handler
+    events:
+      - http:
+          path: create-convenience-store/{ID}
+          method: POST
+          cors: true
+  getConvenienceStore:
+    handler: lambdas/endpoints/getConvenienceStore.handler
+    events:
+      - http:
+          path: get-convenience-store/{ID}
+          method: GET
+          cors: true
+
+
+resources:
+  Resources:
+    MyDynamoDbTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: ID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: ID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

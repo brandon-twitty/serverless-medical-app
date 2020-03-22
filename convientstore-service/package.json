@@ -1,0 +1,33 @@
+{
+  "name": "convenient-store-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "serverless-s3-sync": "^1.10.6",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "aws-sdk": "^2.639.0",
+    "babel-loader": "^8.0.6",
+    "path": "^0.12.7",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandon-twitty/convenient-store-service.git"
+  },
+  "author": "Brandon Twitty",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/brandon-twitty/convenient-store-service#readme"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/lambda-s3-api.iml" filepath="$PROJECT_DIR$/.idea/lambda-s3-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ui-freak-a-links/ui-freak-a-links.iml" filepath="$PROJECT_DIR$/../ui-freak-a-links/ui-freak-a-links.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../upload-s3-lambda/upload-s3-lambda.iml" filepath="$PROJECT_DIR$/../upload-s3-lambda/upload-s3-lambda.iml" />
+    </modules>
+  </component>
+</project>
