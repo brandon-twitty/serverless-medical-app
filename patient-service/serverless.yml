@@ -16,7 +16,9 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs12.x
-  #profile: serverless
+  profile: default
+  role: arn:aws:iam::933153212182:role/candidate-service-dev-sa-east-1-lambdaRole
+  stage: ${self:custom.stageName}
   region: us-east-2
   environment:
     tableName: ${self:custom.tableName}
@@ -33,6 +35,7 @@ package:
 
 custom:
   tableName: patient
+  stageName: dev
 
 functions:
 
@@ -44,10 +47,17 @@ functions:
           method: POST
           cors: true
   getPatient:
-    handler: lambdas/endpoints/getPatient.handler
+    handler: handler.view
     events:
       - http:
           path: get-patient/{ID}
+          method: GET
+          cors: true
+  getAllPatients:
+    handler: lambdas/endpoints/getAllPatients.handler
+    events:
+      - http:
+          path: get-patients
           method: GET
           cors: true
 

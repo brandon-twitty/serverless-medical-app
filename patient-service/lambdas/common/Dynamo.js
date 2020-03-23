@@ -20,6 +20,14 @@ const Dynamo = {
 
         return data.Item;
     },
+    async getAll(TableName){
+        const params = {
+            TableName
+        };
+        const data = await documentClient.scan(params).promise();
+        return data.Items
+    },
+
     async write(data, TableName) {
         if (!data.ID) {
             throw Error('no ID on the data');

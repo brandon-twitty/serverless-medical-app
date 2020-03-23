@@ -16,7 +16,9 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs12.x
-  #profile: serverless
+  profile: default
+  stage: dev
+  #role: arn:aws:iam::933153212182:role/candidate-service-dev-sa-east-1-lambdaRole
   region: us-east-2
   environment:
     tableName: ${self:custom.tableName}
@@ -24,6 +26,7 @@ provider:
     - Effect: Allow
       Action:
         - dynamodb:*
+
       Resource: '*'
 plugins:
   - serverless-webpack
@@ -43,14 +46,20 @@ functions:
           method: POST
           cors: true
   getConvenienceStore:
-    handler: lambdas/endpoints/getConvenienceStore.handler
+    handler: handler.view
     events:
       - http:
           path: get-convenience-store/{ID}
           method: GET
           cors: true
-
-
+  getAllStores:
+    handler: lambdas/endpoints/getAllStores.handler
+    events:
+      - http:
+          path: get-all-store
+          method: GET
+          cors: true
+ 
 resources:
   Resources:
     MyDynamoDbTable:

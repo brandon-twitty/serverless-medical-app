@@ -1,26 +1,12 @@
-const Responses = require('../common/API_Response');
+'use strict';
 
-exports.handler = async event => {
-    console.log('event', event);
+const AWS = require('aws-sdk');
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-    if (!event.pathParameters || !event.pathParameters.ID) {
-        // failed without an ID
-        return Responses._400({ message: 'missing the ID from the path' });
-    }
-
-    let ID = event.pathParameters.ID;
-
-    if (data[ID]) {
-        // return the data
-        return Responses._200(data[ID]);
-    }
-
-    //failed as ID not in the data
-    return Responses._400({ message: 'no ID in data' });
-};
-
-const data = {
-    1234: { name: 'Anna Jones', age: 25, job: 'journalist' },
-    7893: { name: 'Chris Smith', age: 52, job: 'teacher' },
-    5132: { name: 'Tom Hague', age: 23, job: 'plasterer' },
+module.exports = (ID) => {
+    const params = {
+        TableName: 'convenience_store',
+        Key: { ID }
+    };
+    return dynamoDb.get(params).promise();
 };

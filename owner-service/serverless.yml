@@ -16,7 +16,9 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs12.x
-  #profile: serverless
+  profile: default
+  stage: dev
+  role: arn:aws:iam::933153212182:role/candidate-service-dev-sa-east-1-lambdaRole
   region: us-east-2
   environment:
     tableName: ${self:custom.tableName}
@@ -44,10 +46,17 @@ functions:
           method: POST
           cors: true
   getOwner:
-    handler: lambdas/endpoints/getOwner.handler
+    handler: handler.view
     events:
       - http:
           path: get-owner/{ID}
+          method: GET
+          cors: true
+  getAllOwners:
+    handler: lambdas/endpoints/listOwners.handler
+    events:
+      - http:
+          path: list-owners
           method: GET
           cors: true
 

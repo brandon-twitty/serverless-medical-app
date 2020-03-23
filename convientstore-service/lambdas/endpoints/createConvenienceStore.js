@@ -24,5 +24,5 @@ exports.handler = async event => {
         return Responses._400({ message: 'Failed to write convenienceStore by ID' });
     }
 
-    return Responses._200({ newConvienceStore: newConvenienceStore });
+    return Responses._200({ newConvenienceStore: newConvenienceStore });
 };
