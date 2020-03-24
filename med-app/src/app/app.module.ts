@@ -21,13 +21,14 @@ import { CreateOwnerComponent } from './owners/create-owner/create-owner.compone
 import { ListOwnersComponent } from './owners/list-owners/list-owners.component';
 import { EditOwnersComponent } from './owners/edit-owners/edit-owners.component';
 import { GetOwnerComponent } from './owners/get-owner/get-owner.component';
-import { GetStoresComponent } from './stores/get-stores/get-stores.component';
 import { EditStoreComponent } from './stores/edit-store/edit-store.component';
 import { ListStoresComponent } from './stores/list-stores/list-stores.component';
 import { AddStoreComponent } from './stores/add-store/add-store.component';
 import {OwnerService} from './shared/services/owner.service';
 import {PatientService} from './shared/services/patient.service';
 import {StoreService} from './shared/services/store.service';
+import { GetStoreComponent } from './stores/get-store/get-store.component';
+
 
 @NgModule({
   declarations: [
@@ -38,10 +39,10 @@ import {StoreService} from './shared/services/store.service';
     ListOwnersComponent,
     EditOwnersComponent,
     GetOwnerComponent,
-    GetStoresComponent,
     EditStoreComponent,
     ListStoresComponent,
-    AddStoreComponent
+    AddStoreComponent,
+    GetStoreComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,65 @@
-<p>create-owner works!</p>
+<nb-card>
+  <nb-card-header>Create Owner</nb-card-header>
+  <nb-card-body>
+    <div class="columns"></div>
+    <form [formGroup]="createOwnerForm" (ngSubmit)="onFormSubmit()" class="button-margin">
+
+        <label for="OwnersFirstName"> Owners First Name </label>
+        <input nbInput id="OwnersFirstName" type="text" formControlName="OwnersFirstName" class="form-control">
+
+        <label for="OwnersLastName"> Owners Last Name </label>
+        <input nbInput id="OwnersLastName" type="text" formControlName="OwnersLastName" class="form-control">
+
+      <label for="OwnersPhoneNumber"> Owners Phone Number </label>
+      <input nbInput type="number" formControlName="ID" id="OwnersPhoneNumber" class="form-control">
+
+      <label for="OwnersEmailAddress"> Owners Email Address</label>
+      <input nbInput type="text" formControlName="OwnersEmailAddress" id="OwnersEmailAddress" class="form-control" >
+
+      <label for="OwnersPaymentMethod"> Owners Payment Method</label>
+      <input nbInput type="text" formControlName="OwnersPaymentMethod" id="OwnersPaymentMethod" class="form-control" >
+
+      <div class="form-row" style="margin-top: 10px;">
+        <label for="OwnersCommissionRate"> Owners Commission Rate</label>
+        <div class="input-group">
+          <input nbInput type="number" formControlName="OwnersCommissionRate" id="OwnersCommissionRate" class="form-control" aria-label="Store Commission">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!--<nb-form-field>
+
+        <nb-icon nbPrefix icon="percent-outline" pack="eva"></nb-icon>
+        <input type="text" formControlName="ReceivingAgentCommissionRate" id="ReceivingAgentCommissionRate"  class="form-control" nbInput>
+      </nb-form-field>-->
+
+      <div class="form-row" style="margin-top: 10px; width: 50%;">
+        <label for="ReceivingAgentCommissionRate">Receiving Agent Commission</label>
+        <div class="input-group">
+          <input nbInput type="number" formControlName="ReceivingAgentCommissionRate" id="ReceivingAgentCommissionRate" class="form-control" aria-label="Receiving Agent CommissionRate">
+          <div class="input-group-append">
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+      </div>
+      <input  type="hidden" id="custId" name="custId" value="videoUrl">
+      <div class="row button-margin">
+
+        <!--<label for="ackAge">
+          By checking this box, I certify that I am at least 18-years old, have the capacity to enter into legally binding contracts
+        </label>
+        <input  type="checkbox" formControlName="ackAge" id="ackAge" class="form-control" >
+        <label for="acknowledgeToU">
+          By checking this box, I certify that I have read and agree to the Terms of Use
+        </label>
+        <input  type="checkbox" formControlName="acknowledgeToU" id="acknowledgeToU" class="form-control">-->
+        <nb-card-footer class="align-items-center">
+          <button nbButton fullWidth status="success" type="submit" [disabled]="!createOwnerForm.valid" >Create Owner</button>
+        </nb-card-footer>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>Buy Weed</nb-card-footer>
+</nb-card>

@@ -1,9 +1,11 @@
 export class Owner {
+
   OwnersFirstName: string;
   OwnersLastName: string;
-  OwnersPhoneNumber: number;
+  ID: string;
   OwnersEmailAddress: string;
   OwnersPaymentMethod: string;
   OwnersCommissionRate: number;
-
+  ReceivingAgent: string;
+  ReceivingAgentCommissionRate: number;
 }

@@ -11,14 +11,14 @@
 #
 # Happy Coding!
 
-service: convenience-store-service
+service: agent-service
 frameworkVersion: ">=1.1.0 <2.0.0"
 provider:
   name: aws
   runtime: nodejs12.x
   profile: default
   stage: dev
-  #role: arn:aws:iam::933153212182:role/candidate-service-dev-sa-east-1-lambdaRole
+  role: arn:aws:iam::933153212182:role/candidate-service-dev-sa-east-1-lambdaRole
   region: us-east-2
   environment:
     tableName: ${self:custom.tableName}
@@ -35,30 +35,31 @@ package:
   individually: true
 
 custom:
-  tableName: convenience_store
+  tableName: agent
 
 functions:
-  createConvenienceStore:
-    handler: lambdas/endpoints/createConvenienceStore.handler
+  createOwner:
+    handler: lambdas/endpoints/addAgent.handler
     events:
       - http:
-          path: create-convenience-store/{ID}
+          path: add-agent/{ID}
           method: POST
           cors: true
-  getConvenienceStore:
+  getOwner:
     handler: handler.view
     events:
       - http:
-          path: get-convenience-store/{ID}
+          path: get-agent/{ID}
           method: GET
           cors: true
-  getAllStores:
-    handler: lambdas/endpoints/getAllStores.handler
+  getAllOwners:
+    handler: lambdas/endpoints/listAgent.handler
     events:
       - http:
-          path: get-all-store
+          path: list-agent
           method: GET
           cors: true
+
 
 resources:
   Resources:

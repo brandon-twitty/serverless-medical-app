@@ -7,9 +7,9 @@ import {EditOwnersComponent} from './owners/edit-owners/edit-owners.component';
 import {GetOwnerComponent} from './owners/get-owner/get-owner.component';
 import {AddStoreComponent} from './stores/add-store/add-store.component';
 import {EditStoreComponent} from './stores/edit-store/edit-store.component';
-import {GetStoresComponent} from './stores/get-stores/get-stores.component';
 import {ListStoresComponent} from './stores/list-stores/list-stores.component';
 import {ListOwnersComponent} from './owners/list-owners/list-owners.component';
+import {GetStoreComponent} from "./stores/get-store/get-store.component";
 
 
 const routes: Routes = [
@@ -54,7 +54,7 @@ const routes: Routes = [
   },
   {
     path: 'get-store/:id',
-    component: GetStoresComponent
+    component: GetStoreComponent
   },
   {
     path: 'list-stores',

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetStoresComponent } from './get-stores.component';
+import { GetStoreComponent } from './get-store.component';
 
-describe('GetStoresComponent', () => {
-  let component: GetStoresComponent;
-  let fixture: ComponentFixture<GetStoresComponent>;
+describe('GetStoreComponent', () => {
+  let component: GetStoreComponent;
+  let fixture: ComponentFixture<GetStoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetStoresComponent ]
+      declarations: [ GetStoreComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetStoresComponent);
+    fixture = TestBed.createComponent(GetStoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
