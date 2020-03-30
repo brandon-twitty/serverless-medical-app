@@ -21,19 +21,44 @@ const Dynamo = {
         return data.Item;
     },
 
-    async scan(TableName) {
+    scan(key, value, table) {
+        return new Promise((resolve, reject) => {
+            let params = {
+                TableName: table,
+                FilterExpression: `${key} = :value`,
+                ExpressionAttributeValues: { ':value': value }
+            };
+
+            documentClient.scan(params, function(err, data) {
+                if (err) reject(err);
+                resolve(data);
+            });
+        });
+    },
+    async batchGet(Key, TableName){
+        const tableName = TableName;
+        const key = Key;
         const params = {
-            TableName
+            RequestedItems: {
+                TableName: {
+                    Keys: [{
+                        Key: {N:'ID'}
+                    }],
+                    ProjectionExpression: 'ID'
+                }
+            },
         };
 
-        const data = await documentClient.scan(params).promise();
+       documentClient.batchGet(params, function (err, data) {
+           if (err) {
+               console.log(err);
+           }
+           else{
+               data.Responses.TableName.forEach(function (element, index, array) {
 
-        if (!data || !data.Items) {
-            throw Error(`These was an error fetching list of ${Items}`);
-        }
-        console.log(data);
-
-        return data.Items;
+               })
+           } return data;
+       })
     },
 
     async write(data, TableName) {

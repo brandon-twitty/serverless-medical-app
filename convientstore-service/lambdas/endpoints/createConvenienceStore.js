@@ -14,6 +14,7 @@ exports.handler = async event => {
     let ID = event.pathParameters.ID;
     const convenienceStore = JSON.parse(event.body);
     convenienceStore.ID = ID;
+    convenienceStore.createdDate = new Date().getTime();
 
     const newConvenienceStore = await Dynamo.write(convenienceStore, tableName).catch(err => {
         console.log('error in dynamo write', err);

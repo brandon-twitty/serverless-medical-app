@@ -1,7 +1,32 @@
 <nb-layout>
-<nb-layout-header>
-  weed
-</nb-layout-header>
+
+    <nb-layout-header fixed>
+
+        <div class="row">
+          <nb-actions class="float-right">
+
+            <nb-action icon="power-outline"></nb-action>
+            <nb-action icon="person-outline"></nb-action>
+            <nb-action icon="home-outline" routerLink="/"></nb-action>
+            <nb-action icon="search-outline"></nb-action>
+
+          </nb-actions>
+        </div>
+
+    </nb-layout-header>
+
+  <nb-sidebar>
+    <h4>Select Owner</h4>
+    <nb-select [ngModel]="selectedOwner"
+               (ngModelChange)="onChangeObj($event)" name="owners" >
+      <nb-option  *ngFor="let o of owners" [ngValue]="o">
+        {{ o.OwnersFirstName }}
+      </nb-option>
+    </nb-select>
+      <nb-menu tag="menu" [items]="items">
+      </nb-menu>
+
+  </nb-sidebar>
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>

@@ -9,13 +9,13 @@ import {AddStoreComponent} from './stores/add-store/add-store.component';
 import {EditStoreComponent} from './stores/edit-store/edit-store.component';
 import {ListStoresComponent} from './stores/list-stores/list-stores.component';
 import {ListOwnersComponent} from './owners/list-owners/list-owners.component';
-import {GetStoreComponent} from "./stores/get-store/get-store.component";
+import {GetStoreComponent} from './stores/get-store/get-store.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'qualify',
+    redirectTo: 'list-owners',
     pathMatch: 'full'
   },
   {

@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           },
           "configurations": {
             "production": {
@@ -93,6 +96,9 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/open-iconic/font/css/open-iconic-bootstrap.css",
+              "node_modules/@theo4u/ng-alert/style.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/@nebular/theme/styles/prebuilt/default.css"
             ],
             "scripts": []

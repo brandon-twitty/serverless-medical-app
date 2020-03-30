@@ -52,6 +52,13 @@ functions:
           path: get-convenience-store/{ID}
           method: GET
           cors: true
+  viewStoresByOwnerId:
+    handler: lambdas/endpoints/ownersApi.handler
+    events:
+      - http:
+          path: get-stores-by-owner/{storeOwnerId}
+          method: GET
+          cors: true
   getAllStores:
     handler: lambdas/endpoints/getAllStores.handler
     events:

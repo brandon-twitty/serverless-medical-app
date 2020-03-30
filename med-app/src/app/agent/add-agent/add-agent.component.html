@@ -1,0 +1,21 @@
+<form [formGroup]="agentForm">
+  <div [hidden]= "agentForm" class="form-row" style="margin-top: 10px; width: 50%;">
+    <div formGroupName="addReceivingAgentForm">
+      <label for="receivingAgentName"> Receiving Agent Name </label>
+      <input nbInput id="receivingAgentName" type="text" formControlName="receivingAgentName" class="form-control">
+
+      <label for="raEmail"> Receiving Agent Email </label>
+      <input nbInput id="raEmail" type="text" formControlName="raEmail" class="form-control">
+
+      <label for="raPhoneNumber"> Receiving Agent Phone Number </label>
+      <input nbInput type="number" formControlName="raPhoneNumber" id="raPhoneNumber" class="form-control">
+      <label for="ReceivingAgentCommissionRate">Receiving Agent Commission</label>
+      <div class="input-group">
+        <input nbInput type="number" formControlName="ReceivingAgentCommissionRate" id="ReceivingAgentCommissionRate" class="form-control" aria-label="Receiving Agent CommissionRate">
+        <div class="input-group-append">
+          <span class="input-group-text">%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
