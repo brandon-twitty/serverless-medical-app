@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"medapp23819960": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

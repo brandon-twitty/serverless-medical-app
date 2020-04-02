@@ -1,5 +1,5 @@
 'use strict';
-const getOwner = require('./lambdas/endpoints/getOwner');
+const getOwner = require('./lambdas/endpoints/getOwnerById');
 
 
 const view = (event, context, callback) => {

@@ -1,5 +1,20 @@
-type Todo @model {
+
+type Patient @model {
   id: ID!
-  name: String!
-  description: String
+  storeId: String!
+  firstName: String!
+  lastName: String!
+  pPhoneNumber: Int!
+  pEmail: String!
+  appointmentDate: _Neo4jDateTimeInput
+  description: String!
+  dateCreated: _Neo4jDateTimeInput
+  owner: String
 }
+type _Neo4jDateTimeInput {
+  year: Int
+  month: Int
+  day: Int
+  formatted: String
+}
+scalar Date

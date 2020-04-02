@@ -1,4 +1,6 @@
-export class Patient {
+import {Deserializable} from "./deserializable.model";
+
+export class Patient implements Deserializable{
   ID: string;
   storeUrl: string;
   firstName: string;
@@ -8,4 +10,7 @@ export class Patient {
   appointmentDate: string;
   dateCreated: Date;
 
+  deserialize(input: any): this {
+    return Object.assign(this, input);
+  }
 }

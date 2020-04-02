@@ -4,24 +4,25 @@ import {IntroComponent} from './intro/intro.component';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {CreateOwnerComponent} from './owners/create-owner/create-owner.component';
 import {EditOwnersComponent} from './owners/edit-owners/edit-owners.component';
-import {GetOwnerComponent} from './owners/get-owner/get-owner.component';
 import {AddStoreComponent} from './stores/add-store/add-store.component';
 import {EditStoreComponent} from './stores/edit-store/edit-store.component';
 import {ListStoresComponent} from './stores/list-stores/list-stores.component';
 import {ListOwnersComponent} from './owners/list-owners/list-owners.component';
 import {GetStoreComponent} from './stores/get-store/get-store.component';
+import {GetOwnerDetailsComponent} from "./owners/get-owner-details/get-owner-details.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list-owners',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'qualify',
-    component: IntroComponent,
-    data: {title: 'Qualify'}
+    path: '',
+    component: DashboardComponent,
+    data: {title: 'Dashboard'}
   },
   {
     path: 'schedule-appointment',
@@ -33,31 +34,31 @@ const routes: Routes = [
     component: CreateOwnerComponent
   },
   {
-    path: 'edit-owner/:id',
+    path: 'edit-owner/:ID',
     component: EditOwnersComponent
-  },
-  {
-    path: 'get-owner/:id',
-    component: GetOwnerComponent
   },
   {
     path: 'list-owners',
     component: ListOwnersComponent
   },
   {
+    path: 'owner-details/:ID',
+    component: GetOwnerDetailsComponent
+  },
+  {
     path: 'add-store',
     component: AddStoreComponent
   },
   {
-    path: 'edit-store/:id',
+    path: 'edit-store/:ID',
     component: EditStoreComponent
   },
   {
-    path: 'get-store/:id',
+    path: 'get-store/:ID',
     component: GetStoreComponent
   },
   {
-    path: 'list-stores',
+    path: 'list-stores/:storeOwnerId',
     component: ListStoresComponent
   }
 ];

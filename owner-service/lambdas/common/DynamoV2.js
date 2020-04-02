@@ -72,5 +72,18 @@ module.exports = class DB {
             });
         });
     }
+    delete(key, value, table) {
+        return new Promise((resolve, reject) => {
+            let params = {
+                TableName: table,
+                FilterExpression: `${key} = :value`,
+                ExpressionAttributeValues: { ':value': value }
+            };
+            documentClient.scan(params, function(err, data) {
+                if (err) reject(err);
+                resolve(data);
+            });
+        })
+    }
 };
 

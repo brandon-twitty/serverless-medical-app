@@ -45,8 +45,8 @@ functions:
           path: create-owner/{ID}
           method: POST
           cors: true
-  getOwner:
-    handler: handler.view
+  getOwnerById:
+    handler: lambdas/endpoints/getOwnerById.handler
     events:
       - http:
           path: get-owner/{ID}
@@ -56,8 +56,15 @@ functions:
     handler: lambdas/endpoints/listOwners.handler
     events:
       - http:
-          path: list-owners
+          path: get-owners
           method: GET
+          cors: true
+  deleteOwner:
+    handler: lambdas/endpoints/deleteOwner.handler
+    events:
+      - http:
+          path: delete-owner/{ID}
+          method: DELETE
           cors: true
 
 

@@ -1,7 +1,6 @@
 {
   "name": "patients-service",
   "version": "1.0.0",
-  "description": "",
   "main": "handler.js",
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -26,8 +25,9 @@
   },
   "author": "Brandon Twitty",
   "license": "ISC",
+  "homepage": "https://github.com/brandon-twitty/patient-service#readme",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/brandon-twitty/patient-service/issues"
   },
-  "homepage": "https://github.com/brandon-twitty/patient-service#readme"
+  "description": ""
 }

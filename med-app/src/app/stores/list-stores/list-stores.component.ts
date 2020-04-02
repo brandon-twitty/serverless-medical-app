@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {StoreService} from "../../shared/services/store.service";
+import {Store} from "..";
 
 @Component({
   selector: 'app-list-stores',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-stores.component.scss']
 })
 export class ListStoresComponent implements OnInit {
+  currentOwner = null;
+  store: Store;
+  stores = [];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private storeService: StoreService, private router: Router, private ngZone: NgZone,) {
 
-  ngOnInit(): void {
+   /* let storeOwnerId = this.route.snapshot.paramMap.get('ID');
+    this.storeService.getStoreByOwner(storeOwnerId).subscribe(data => {
+      console.log(data.storeOwnerId)
+    })*/
   }
 
+  ngOnInit(): void {
+
+  }
+  getStoresByOwner(storeOwnerId) {
+    console.log(storeOwnerId);
+   this.storeService.getStoreByOwner(storeOwnerId).subscribe(store => this.store = store);
+
+  }
 }

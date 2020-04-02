@@ -1,36 +1,36 @@
-<nb-layout>
-
-    <nb-layout-header fixed>
-
-        <div class="row">
-          <nb-actions class="float-right">
-
-            <nb-action icon="power-outline"></nb-action>
-            <nb-action icon="person-outline"></nb-action>
-            <nb-action icon="home-outline" routerLink="/"></nb-action>
-            <nb-action icon="search-outline"></nb-action>
-
-          </nb-actions>
-        </div>
-
-    </nb-layout-header>
-
-  <nb-sidebar>
-    <h4>Select Owner</h4>
-    <nb-select [ngModel]="selectedOwner"
-               (ngModelChange)="onChangeObj($event)" name="owners" >
-      <nb-option  *ngFor="let o of owners" [ngValue]="o">
-        {{ o.OwnersFirstName }}
+<mat-toolbar color="primary">
+   <span class="nav-tool-items">
+     <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+     </button>
+  </span>
+  <div>Get Legal Now</div>
+  <!-- select owner dropdown -->
+  <span class="example-fill-remaining-space">
+     <!--<nb-select [ngModel]="selectedOwner" ngSwitch="getOwnerDetails" (ngModelChange)="onChangeObj($event)">
+      <nb-option  *ngFor="let owner of allOwners; let i = index" [value]="allOwners[i]">
+        {{allOwners[i].OwnersLastName +  allOwners[i].OwnersLastName}}
       </nb-option>
-    </nb-select>
-      <nb-menu tag="menu" [items]="items">
-      </nb-menu>
+    </nb-select>-->
+  </span>
+  <span class="left">Right Aligned Text</span>
+</mat-toolbar>
 
-  </nb-sidebar>
-  <nb-layout-column>
+<mat-sidenav-container class="mat-sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [(opened)]="opened" >
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-student">
+        <mat-icon>add</mat-icon> Add Student
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/list-owners">
+        <mat-icon>format_list_bulleted</mat-icon> View Owners
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="margin-left: 250px;">
+
     <router-outlet></router-outlet>
-  </nb-layout-column>
-  <nb-layout-footer>
-    Weed
-  </nb-layout-footer>
-</nb-layout>
+  </mat-sidenav-content>
+</mat-sidenav-container>

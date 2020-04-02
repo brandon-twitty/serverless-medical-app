@@ -28,3 +28,4 @@ const getStoreByOwnerId = async event => {
     console.log(data);
     return data;
 };
+

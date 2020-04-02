@@ -1,5 +1,5 @@
 import {FormControl} from '@angular/forms';
-import {Store} from '../shared/models/store';
+import {Store} from './store';
 
 export class StoreForm {
   ID = new FormControl();

@@ -1,0 +1,263 @@
+2020-03-31T23:06:45.762Z [INFO]: Git SSH Key acquired
+2020-03-31T23:06:45.829Z [INFO]: # Cloning repository: git@github.com:brandon-twitty/patient-ionic.git
+2020-03-31T23:06:46.034Z [INFO]: Agent pid 120
+2020-03-31T23:06:46.038Z [INFO]: Identity added: /root/.ssh/git_rsa (/root/.ssh/git_rsa)
+2020-03-31T23:06:46.381Z [INFO]: Cloning into 'patient-ionic'...
+2020-03-31T23:06:47.008Z [INFO]: Warning: Permanently added the RSA host key for IP address '140.82.113.4' to the list of known hosts.
+2020-03-31T23:06:47.358Z [INFO]: # Checking for Git submodules at: /codebuild/output/src648899881/src/patient-ionic/.gitmodules
+2020-03-31T23:06:47.380Z [INFO]: # Retrieving cache...
+2020-03-31T23:06:47.414Z [INFO]: # Extracting cache...
+2020-03-31T23:06:47.425Z [INFO]: # Extraction completed
+2020-03-31T23:06:47.425Z [INFO]: # Retrieving environment cache...
+2020-03-31T23:06:47.463Z [INFO]: # Retrieved environment cache
+2020-03-31T23:07:32.679Z [INFO]: ## Starting Frontend Build
+                                 # Starting phase: preBuild
+                                 # Executing command: npm ci
+2020-03-31T23:07:45.963Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src648899881/src/patient-ionic/node_modules/webpack-dev-server/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-31T23:07:46.103Z [WARNING]: gyp
+2020-03-31T23:07:46.103Z [WARNING]: 
+2020-03-31T23:07:46.104Z [WARNING]: info it worked if it ends with ok
+2020-03-31T23:07:46.105Z [WARNING]: gyp
+2020-03-31T23:07:46.105Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-31T23:07:46.847Z [WARNING]: gyp
+2020-03-31T23:07:46.848Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src648899881/src/patient-ionic/node_modules/webpack-dev-server/node_modules/fsevents/build/config.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args
+2020-03-31T23:07:46.848Z [WARNING]: '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info spawn args   '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+                                    gyp
+2020-03-31T23:07:46.848Z [WARNING]: info spawn args   '-Dmodule_root_dir=/codebuild/output/src648899881/src/patient-ionic/node_modules/webpack-dev-server/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args   '--depth=.',
+                                    gyp info spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info spawn args   'build',
+                                    gyp
+2020-03-31T23:07:46.848Z [WARNING]: info spawn args   '-Goutput_dir=.' ]
+2020-03-31T23:07:47.246Z [WARNING]: gyp
+2020-03-31T23:07:47.247Z [WARNING]: info spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-31T23:07:47.287Z [INFO]: make: Entering directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/webpack-dev-server/node_modules/fsevents/build'
+                                 SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-31T23:07:47.757Z [INFO]: COPY Release/.node
+2020-03-31T23:07:47.765Z [INFO]: make: Leaving directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/webpack-dev-server/node_modules/fsevents/build'
+2020-03-31T23:07:47.766Z [WARNING]: gyp info ok
+2020-03-31T23:07:47.809Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src648899881/src/patient-ionic/node_modules/watchpack/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-31T23:07:47.904Z [WARNING]: gyp
+2020-03-31T23:07:47.905Z [WARNING]: 
+2020-03-31T23:07:47.905Z [WARNING]: info it worked if it ends with ok
+2020-03-31T23:07:47.906Z [WARNING]: gyp
+2020-03-31T23:07:47.906Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-31T23:07:48.038Z [WARNING]: gyp
+2020-03-31T23:07:48.039Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src648899881/src/patient-ionic/node_modules/watchpack/node_modules/fsevents/build/config.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info spawn args
+2020-03-31T23:07:48.039Z [WARNING]: '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+                                    gyp info spawn args   '-Dmodule_root_dir=/codebuild/output/src648899881/src/patient-ionic/node_modules/watchpack/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args   '--depth=.',
+                                    gyp info spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info spawn args   'build',
+                                    gyp info spawn args   '-Goutput_dir=.' ]
+2020-03-31T23:07:48.083Z [WARNING]: gyp
+2020-03-31T23:07:48.083Z [WARNING]: info spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-31T23:07:48.084Z [INFO]: make: Entering directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/watchpack/node_modules/fsevents/build'
+2020-03-31T23:07:48.085Z [INFO]: SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-31T23:07:48.129Z [INFO]: COPY Release/.node
+2020-03-31T23:07:48.135Z [INFO]: make: Leaving directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/watchpack/node_modules/fsevents/build'
+2020-03-31T23:07:48.135Z [WARNING]: gyp
+2020-03-31T23:07:48.135Z [WARNING]: info ok
+2020-03-31T23:07:48.286Z [INFO]: > core-js@3.6.4 postinstall /codebuild/output/src648899881/src/patient-ionic/node_modules/@angular-devkit/build-angular/node_modules/core-js
+                                 > node -e "try{require('./postinstall')}catch(e){}"
+2020-03-31T23:07:48.340Z [INFO]: Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+                                 The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+                                 > https://opencollective.com/core-js
+                                 > https://www.patreon.com/zloirock
+                                 Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+2020-03-31T23:07:48.404Z [INFO]: > core-js@2.6.11 postinstall /codebuild/output/src648899881/src/patient-ionic/node_modules/core-js
+                                 > node -e "try{require('./postinstall')}catch(e){}"
+2020-03-31T23:07:48.530Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src648899881/src/patient-ionic/node_modules/karma/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-31T23:07:48.616Z [WARNING]: gyp
+2020-03-31T23:07:48.617Z [WARNING]: 
+2020-03-31T23:07:48.617Z [WARNING]: info it worked if it ends with ok
+2020-03-31T23:07:48.618Z [WARNING]: gyp
+2020-03-31T23:07:48.618Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-31T23:07:48.758Z [WARNING]: gyp
+2020-03-31T23:07:48.758Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src648899881/src/patient-ionic/node_modules/karma/node_modules/fsevents/build/config.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info spawn args   '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info
+2020-03-31T23:07:48.759Z [WARNING]: spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+                                    gyp info spawn args   '-Dmodule_root_dir=/codebuild/output/src648899881/src/patient-ionic/node_modules/karma/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args   '--depth=.',
+                                    gyp info spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info spawn args   'build',
+                                    gyp info spawn args   '-Goutput_dir=.' ]
+2020-03-31T23:07:48.805Z [WARNING]: gyp
+2020-03-31T23:07:48.805Z [WARNING]: info spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-31T23:07:48.807Z [INFO]: make: Entering directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/karma/node_modules/fsevents/build'
+2020-03-31T23:07:48.808Z [INFO]: SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-31T23:07:48.971Z [INFO]: COPY Release/.node
+2020-03-31T23:07:48.977Z [INFO]: make: Leaving directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/karma/node_modules/fsevents/build'
+2020-03-31T23:07:48.978Z [WARNING]: gyp
+2020-03-31T23:07:48.978Z [WARNING]: info ok
+2020-03-31T23:07:49.023Z [INFO]: > fsevents@1.2.12 install /codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/compiler-cli/node_modules/fsevents
+                                 > node-gyp rebuild
+2020-03-31T23:07:49.107Z [WARNING]: gyp
+2020-03-31T23:07:49.108Z [WARNING]: 
+2020-03-31T23:07:49.108Z [WARNING]: info it worked if it ends with ok
+2020-03-31T23:07:49.109Z [WARNING]: gyp
+2020-03-31T23:07:49.109Z [WARNING]: info using node-gyp@3.8.0
+                                    gyp info using node@10.16.0 | linux | x64
+2020-03-31T23:07:49.234Z [WARNING]: gyp
+2020-03-31T23:07:49.235Z [WARNING]: info spawn /usr/bin/python2
+                                    gyp info spawn args [ '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py',
+                                    gyp info spawn args   'binding.gyp',
+                                    gyp info spawn args   '-f',
+                                    gyp info spawn args   'make',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/compiler-cli/node_modules/fsevents/build/config.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info
+2020-03-31T23:07:49.235Z [WARNING]: spawn args   '/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp/addon.gypi',
+                                    gyp info spawn args   '-I',
+                                    gyp info spawn args   '/root/.node-gyp/10.16.0/include/node/common.gypi',
+                                    gyp info spawn args   '-Dlibrary=shared_library',
+                                    gyp info spawn args   '-Dvisibility=default',
+                                    gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/10.16.0',
+                                    gyp info
+2020-03-31T23:07:49.235Z [WARNING]: spawn args   '-Dnode_gyp_dir=/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/node-gyp',
+                                    gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/10.16.0/<(target_arch)/node.lib',
+                                    gyp info spawn args   '-Dmodule_root_dir=/codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/compiler-cli/node_modules/fsevents',
+                                    gyp info spawn args   '-Dnode_engine=v8',
+                                    gyp info spawn args   '--depth=.',
+                                    gyp info
+2020-03-31T23:07:49.235Z [WARNING]: spawn args   '--no-parallel',
+                                    gyp info spawn args   '--generator-output',
+                                    gyp info spawn args   'build',
+                                    gyp info spawn args   '-Goutput_dir=.' ]
+2020-03-31T23:07:49.278Z [WARNING]: gyp
+2020-03-31T23:07:49.279Z [WARNING]: info spawn make
+                                    gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+2020-03-31T23:07:49.280Z [INFO]: make: Entering directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/compiler-cli/node_modules/fsevents/build'
+2020-03-31T23:07:49.280Z [INFO]: SOLINK_MODULE(target) Release/obj.target/.node
+2020-03-31T23:07:49.325Z [INFO]: COPY Release/.node
+2020-03-31T23:07:49.331Z [INFO]: make: Leaving directory `/codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/compiler-cli/node_modules/fsevents/build'
+2020-03-31T23:07:49.331Z [WARNING]: gyp
+2020-03-31T23:07:49.331Z [WARNING]: info ok
+2020-03-31T23:07:49.356Z [INFO]: > @angular/cli@8.3.25 postinstall /codebuild/output/src648899881/src/patient-ionic/node_modules/@angular/cli
+                                 > node ./bin/postinstall/script.js
+2020-03-31T23:07:49.716Z [INFO]: added 1242 packages in 16.25s
+2020-03-31T23:07:49.727Z [INFO]: # Completed phase: preBuild
+2020-03-31T23:07:49.729Z [INFO]: # Starting phase: build
+                                 # Executing command: npm run build
+2020-03-31T23:07:49.903Z [INFO]: > patient@0.0.1 build /codebuild/output/src648899881/src/patient-ionic
+                                 > ng build
+2020-03-31T23:08:02.676Z [INFO]: Generating ES5 bundles for differential loading...
+2020-03-31T23:08:02.678Z [INFO]: 
+2020-03-31T23:08:03.609Z [WARNING]: An unhandled exception occurred: [BABEL] /codebuild/output/src648899881/src/patient-ionic/www/0-es2015.js: Could not find plugin "proposal-numeric-separator". Ensure there is an entry in ./available-plugins.js for it. (While processing: "/codebuild/output/src648899881/src/patient-ionic/node_modules/@babel/preset-env/lib/index.js")
+                                    See "/tmp/ng-YNWXr7/angular-errors.log" for further details.
+2020-03-31T23:08:03.676Z [WARNING]: npm ERR! file sh
+                                    npm ERR! code ELIFECYCLE
+                                    npm ERR! errno ENOENT
+                                    npm ERR! syscall spawn
+                                    npm ERR! patient@0.0.1 build: `ng build`
+                                    npm ERR! spawn ENOENT
+                                    npm ERR!
+                                    npm ERR! Failed at the patient@0.0.1 build script.
+                                    npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2020-03-31T23:08:03.687Z [WARNING]: 
+2020-03-31T23:08:03.687Z [WARNING]: npm
+2020-03-31T23:08:03.688Z [WARNING]: 
+2020-03-31T23:08:03.689Z [WARNING]: ERR! A complete log of this run can be found in:
+                                    npm ERR!     /root/.npm/_logs/2020-03-31T23_08_03_674Z-debug.log
+2020-03-31T23:08:03.689Z [HELP]: Outputting the npm debug log
+                                 0 info it worked if it ends with ok
+                                 1 verbose cli [ '/root/.nvm/versions/node/v10.16.0/bin/node',
+                                 1 verbose cli   '/root/.nvm/versions/node/v10.16.0/bin/npm',
+                                 1 verbose cli   'run',
+                                 1 verbose cli   'build' ]
+                                 2 info using npm@6.9.0
+                                 3 info using node@v10.16.0
+                                 4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+                                 5 info lifecycle patient@0.0.1~prebuild: patient@0.0.1
+                                 6 info lifecycle patient@0.0.1~build: patient@0.0.1
+                                 7 verbose lifecycle patient@0.0.1~build: unsafe-perm in lifecycle true
+                                 8 verbose lifecycle patient@0.0.1~build: PATH: /root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/codebuild/output/src648899881/src/patient-ionic/node_modules/.bin:/usr/local/rvm/gems/ruby-2.4.6/bin:/usr/local/rvm/gems/ruby-2.4.6@global/bin:/usr/local/rvm/rubies/ruby-2.4.6/bin:/usr/local/rvm/bin:/root/.yarn/bin:/root/.config/yarn/global/node_modules/.bin:/root/.nvm/versions/node/v10.16.0/bin:/root/.local/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+                                 9 verbose lifecycle patient@0.0.1~build: CWD: /codebuild/output/src648899881/src/patient-ionic
+                                 10 silly lifecycle patient@0.0.1~build: Args: [ '-c', 'ng build' ]
+                                 11 info lifecycle patient@0.0.1~build: Failed to exec build script
+                                 12 verbose stack Error: patient@0.0.1 build: `ng build`
+                                 12 verbose stack spawn ENOENT
+                                 12 verbose stack     at ChildProcess.<anonymous> (/root/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:48:18)
+                                 12 verbose stack     at ChildProcess.emit (events.js:198:13)
+                                 12 verbose stack     at maybeClose (internal/child_process.js:982:16)
+                                 12 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)
+                                 13 verbose pkgid patient@0.0.1
+                                 14 verbose cwd /codebuild/output/src648899881/src/patient-ionic
+                                 15 verbose Linux 4.14.165-103.209.amzn1.x86_64
+                                 16 verbose argv "/root/.nvm/versions/node/v10.16.0/bin/node" "/root/.nvm/versions/node/v10.16.0/bin/npm" "run" "build"
+                                 17 verbose node v10.16.0
+                                 18 verbose npm  v6.9.0
+                                 19 error file sh
+                                 20 error code ELIFECYCLE
+                                 21 error errno ENOENT
+                                 22 error syscall spawn
+                                 23 error patient@0.0.1 build: `ng build`
+                                 23 error spawn ENOENT
+                                 24 error Failed at the patient@0.0.1 build script.
+                                 24 error This is probably not a problem with npm. There is likely additional logging output above.
+                                 25 verbose exit [ 1, true ]
+2020-03-31T23:08:03.693Z [ERROR]: !!! Build failed
+2020-03-31T23:08:03.693Z [ERROR]: !!! Non-Zero Exit Code detected
+2020-03-31T23:08:03.693Z [INFO]: # Starting environment caching...
+2020-03-31T23:08:03.694Z [INFO]: # Environment caching completed
+Terminating logging...

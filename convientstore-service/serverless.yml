@@ -46,11 +46,11 @@ functions:
           method: POST
           cors: true
   getConvenienceStore:
-    handler: handler.view
+    handler: lambdas/endpoints/getConvenienceStore.handler
     events:
       - http:
           path: get-convenience-store/{ID}
-          method: GET
+          method: get
           cors: true
   viewStoresByOwnerId:
     handler: lambdas/endpoints/ownersApi.handler
