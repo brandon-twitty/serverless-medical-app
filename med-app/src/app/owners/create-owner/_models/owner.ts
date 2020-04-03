@@ -5,22 +5,22 @@ import {Patient} from '../../../shared/models/patient';
 
 export class Owner  {
 
-  OwnersFirstName?: string;
-  OwnersLastName?: string;
-  ID?: number;
-  OwnersPhoneNumber?: number;
-  OwnersEmailAddress?: string;
-  OwnersPaymentMethod?: string;
-  OwnersCommissionRate?: number;
-  ReceivingAgentCommissionRate?: number;
-  agentId?: number;
+  OwnersFirstName: string;
+  OwnersLastName: string;
+  ID: number;
+  OwnersPhoneNumber: number;
+  OwnersEmailAddress: string;
+  OwnersPaymentMethod: string;
+  OwnersCommissionRate: number;
+  ReceivingAgentCommissionRate: number;
+  agentId: number;
   //agents: ReceivingAgent [];
   //stores: Store [];
  // patients: Patient [];
 
 
-  /*constructor(OwnersFirstName?: string, OwnersLastName?: string, ID?: number, OwnersPhoneNumber?: number, OwnersEmailAddress?: string, OwnersPaymentMethod?: string, OwnersCommissionRate?: number,
-              ReceivingAgentCommissionRate?: number, agentId?: number, agents?: ReceivingAgent[], stores?: Store[], patients?: Patient[]) {
+ /* constructor(OwnersFirstName: string, OwnersLastName: string, ID: number, OwnersPhoneNumber: number, OwnersEmailAddress: string, OwnersPaymentMethod: string, OwnersCommissionRate: number,
+              ReceivingAgentCommissionRate: number, agentId: number, agents: ReceivingAgent[], stores: Store[], patients: Patient[]) {
     this.OwnersFirstName = OwnersFirstName;
     this.OwnersLastName = OwnersLastName;
     this.ID = OwnersPhoneNumber;

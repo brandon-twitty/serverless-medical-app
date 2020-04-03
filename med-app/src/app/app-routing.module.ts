@@ -11,6 +11,8 @@ import {ListOwnersComponent} from './owners/list-owners/list-owners.component';
 import {GetStoreComponent} from './stores/get-store/get-store.component';
 import {GetOwnerDetailsComponent} from "./owners/get-owner-details/get-owner-details.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {GetPatientsComponent} from "./get-patients/get-patients.component";
+import {ListPatientsComponent} from "./list-patients/list-patients.component";
 
 
 const routes: Routes = [
@@ -60,11 +62,22 @@ const routes: Routes = [
   {
     path: 'list-stores/:storeOwnerId',
     component: ListStoresComponent
+  },
+  {
+    path: 'get-patient/:ID',
+    component: GetPatientsComponent
+  },
+  {
+    path: 'list-patients',
+    component: ListPatientsComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    routes,
+    { enableTracing: true }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

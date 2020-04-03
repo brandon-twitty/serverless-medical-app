@@ -47,7 +47,7 @@ functions:
           method: POST
           cors: true
   getPatient:
-    handler: lambdas/endpoints/getPatient.handler
+    handler: lambdas/endpoints/getPatient.get
     events:
       - http:
           path: get-patient/{ID}

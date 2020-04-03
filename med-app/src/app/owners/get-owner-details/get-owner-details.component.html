@@ -4,19 +4,23 @@
       <table  class="table table-striped">
         <tr>
           <td>Name</td>
-          <td>{{ownerData.OwnersLastName}}</td>
+          <td>{{owner.OwnersFirstName}}</td>
         </tr>
         <tr>
-          <td>Description</td>
-          <td>{{ownerData.OwnersLastName}}</td>
+          <td>Last Name</td>
+          <td>{{owner.OwnersLastName}}</td>
         </tr>
         <tr>
-          <td>Price</td>
-          <td>{{ownerData.OwnersEmailAddress}}</td>
+          <td>Email</td>
+          <td>{{owner.OwnersEmailAddress}}</td>
+        </tr>
+        <tr>
+          <td>action</td>
+          <a routerLink="add-store">add store</a>
         </tr>
       </table>
       <br>
-      <button class="btn btn-warning" (click)="navigation('')">Go Back</button>
+
     </div>
   </div>
 </div>

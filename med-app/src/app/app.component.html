@@ -20,11 +20,14 @@
   <!-- Sidenav -->
   <mat-sidenav #sidenav [(opened)]="opened" >
     <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="/add-student">
-        <mat-icon>add</mat-icon> Add Student
+      <a mat-list-item routerLinkActive="active" routerLink="/create-owner">
+        <mat-icon>add</mat-icon> Create Owner
       </a>
       <a mat-list-item routerLinkActive="active" routerLink="/list-owners">
         <mat-icon>format_list_bulleted</mat-icon> View Owners
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-store">
+        <mat-icon>add</mat-icon> Add Store
       </a>
     </mat-nav-list>
   </mat-sidenav>

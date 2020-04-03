@@ -10,25 +10,21 @@ import {Owner} from "../create-owner/_models/owner";
 })
 export class GetOwnerDetailsComponent implements OnInit {
   ID: any;
-  ownerData: any = [];
+  owner: Owner;
 
   constructor(private ownerService: OwnerService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
    this.activeRoute.params.subscribe(params => {
      this.ID = params;
-     console.log(params)
+     console.log(this.ID)
    });
-    this.loadOwnerDetails(this.ID)
-  }
-  loadOwnerDetails(ID) {
-    this.ownerService.getOwnerById(ID).subscribe(data => {
-      console.log(data);
-      this.ownerData = data;
-    })
-  }
-  navigation(link){
-    this.router.navigate([link]);
-  }
+      this.ownerService.getOwnerById(this.ID).subscribe((owner: Owner) => {
+        console.log(owner);
+        this.owner = owner;
+      })
+    }
+  addStore() {
 
+  }
 }

@@ -30,6 +30,9 @@ import {SidenavService} from "./shared/sidenav.service";
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import { ListPatientsComponent } from './list-patients/list-patients.component';
+import { GetPatientsComponent } from './get-patients/get-patients.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
     DashboardComponent,
     GetOwnerDetailsComponent,
     SidenavComponent,
-    LeftSidenavComponent
+    LeftSidenavComponent,
+    ListPatientsComponent,
+    GetPatientsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,8 +66,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     ReactiveFormsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatExpansionModule
-
+    MatExpansionModule,
   ],
   providers: [OwnerService, PatientService, StoreService, OwnersDataSource, SidenavService],
   bootstrap: [AppComponent],

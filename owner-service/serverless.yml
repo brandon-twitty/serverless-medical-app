@@ -46,7 +46,7 @@ functions:
           method: POST
           cors: true
   getOwnerById:
-    handler: lambdas/endpoints/getOwnerById.handler
+    handler: lambdas/endpoints/getOwnerById.get
     events:
       - http:
           path: get-owner/{ID}

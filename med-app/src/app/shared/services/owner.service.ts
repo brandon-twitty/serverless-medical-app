@@ -40,7 +40,7 @@ export class OwnerService {
   }
 
   public getOwnerById(ID): Observable<Owner> {
-    return this.http.get<Owner>(`${this.ownerApi}/get-owner/${ID}`, httpOptions);
+    return this.http.get<Owner>(`${this.ownerApi}/get-owner/${ID.ID}`, httpOptions);
 
   }
   public createOwner(owner: Owner) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {Patient} from "../models/patient";
+import {Owner} from "../../owners/create-owner/_models/owner";
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -19,8 +20,8 @@ export class PatientService {
     return this.http.get(this.patientApi + '/get-patients');
   }
 
-  public getPatientById(ID): Observable<Patient> {
-    return this.http.get<Patient>(`${this.patientApi}/get-patient/${ID}`, httpOptions);
+  public getOwnerById(ID): Observable<Owner> {
+    return this.http.get<Owner>(`${this.patientApi}/get-patient/${ID.ID}`, httpOptions);
 
   }
 

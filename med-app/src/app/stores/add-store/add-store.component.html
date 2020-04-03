@@ -1,24 +1,44 @@
-<form [formGroup]="storeForm">
+<form [formGroup]="storeForm" (ngSubmit)="submitStoreForm()">
   <table>
     <tr>
       <td>
 
-          <input  formControlName="firstName" placeholder="First Name">
+        <mat-form-field appearance="outline">
+          <mat-label>Contact Name</mat-label>
+          <input matInput formControlName="storeContactName" placeholder="Placeholder">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
 
       </td>
       <td>
 
-          <input formControlName="lastName" placeholder="Last Name">
+        <mat-form-field appearance="outline">
+          <mat-label>Store Address</mat-label>
+          <input matInput formControlName="storeAddress" placeholder="Store Address">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
 
       </td>
       <td>
 
-          <input  formControlName="position" placeholder="Position">
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="storePhoneNumber" placeholder="Store Phone Number">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
 
       </td>
       <td>
 
-          <input  formControlName="number" placeholder="Number">
+        <mat-form-field appearance="outline">
+          <mat-label>Store Email Address</mat-label>
+          <input matInput formControlName="storeEmail" placeholder="Store Email">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
 
       </td>
       <td>
@@ -27,5 +47,6 @@
       </td>
     </tr>
   </table>
+  <button type="submit">Add Store</button>
   <pre>Player Form Status: <span class="status">{{storeForm.status}}</span></pre>
 </form>

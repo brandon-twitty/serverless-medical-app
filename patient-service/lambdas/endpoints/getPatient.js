@@ -1,29 +1,32 @@
-const DB = require('../common/DynamoV2');
-const Dynamo = new DB();
-exports.handler = async (event) => {
-    console.log(event);
-    if (event.httpMethod === 'GET') {
-        let response = await getPatientById(event);
-        return done(response);
-    }
-};
-const done = response => {
-    return {
-        statusCode: '200',
-        body: JSON.stringify(response),
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Methods': '*',
-            'Access-Control-Allow-Origin': '*'
+const AWS = require("aws-sdk");
+const documentClient = new AWS.DynamoDB.DocumentClient();
+
+module.exports.get = (event, context, callback) => {
+    const params = {
+        TableName: 'patient',
+        Key: {
+            ID: event.pathParameters.ID,
+        },
+    };
+
+    // fetch todo from the database
+    documentClient.get(params, (error, result) => {
+        // handle potential errors
+        if (error) {
+            console.error(error);
+            callback(null, {
+                statusCode: error.statusCode || 501,
+                headers: { 'Content-Type': 'text/plain' },
+                body: 'Couldn yo mama',
+            });
+            return;
         }
-    }
-};
-const getPatientById = async event => {
-    let ID = event.pathParameters.ID;
-    let data = await Dynamo.scan('ID', ID, 'patient');
-    let result = data.Items.sort((a,b) => b.count - a.count);
-    result = result.map(({})=> {
-        return {}});
-    console.log(data);
-    return data;
+
+        // create a response
+        const response = {
+            statusCode: 200,
+            body: JSON.stringify(result.Item),
+        };
+        callback(null, response);
+    });
 };

@@ -30,7 +30,7 @@ export class CreateOwnerComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.ownerFormSub = this.ownerService.ownerForm$
-      .subscribe(owner => {owner
+      .subscribe(owner => {
         this.ownerForm = owner;
         this.agents = this.ownerForm.get('agents') as FormArray;
         this.store = this.ownerForm.get('stores') as FormArray;

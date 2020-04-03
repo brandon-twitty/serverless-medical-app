@@ -46,7 +46,7 @@ functions:
           method: POST
           cors: true
   getConvenienceStore:
-    handler: lambdas/endpoints/getConvenienceStore.handler
+    handler: lambdas/endpoints/getConvenienceStore.get
     events:
       - http:
           path: get-convenience-store/{ID}
