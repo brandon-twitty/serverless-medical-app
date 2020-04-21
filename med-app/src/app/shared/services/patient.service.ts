@@ -20,10 +20,6 @@ export class PatientService {
     return this.http.get(this.patientApi + '/get-patients');
   }
 
-  public getOwnerById(ID): Observable<Owner> {
-    return this.http.get<Owner>(`${this.patientApi}/get-patient/${ID.ID}`, httpOptions);
-
-  }
 
   public createPatient(patient: Patient) {
     return this.http.post(`${this.patientApi}/create-patient/${patient.ID}`, patient, httpOptions);

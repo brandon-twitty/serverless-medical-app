@@ -14,7 +14,7 @@ import {Subscription} from 'rxjs';
 })
 export class CreateOwnerComponent implements OnInit, OnDestroy {
 
-  // newOwner: Owner = new Owner();
+  newOwner: Owner = new Owner();
   ownerForm: FormGroup;
   ownerFormSub: Subscription;
   agents: FormArray;
@@ -43,23 +43,7 @@ export class CreateOwnerComponent implements OnInit, OnDestroy {
   get myForm() {
     return this.ownerForm.controls;
   }
-  /*get agentId() {
-    this.newAgent.ID = this.addReceivingAgentForm.controls.raPhoneNumber.value;
-    return this.addReceivingAgentForm.get('raPhoneNumber') as FormArray;
-  }
-  createAgent(): FormGroup {
-    return this.fb.group({
-      receivingAgentName: [''],
-      raEmail: [''],
-      raPhoneNumber: ['']
-    });
-  }*/
-  /*addStore() {
-    this.ownerService.addStore();
-  }
-  deleteStore(index: number) {
-    this.ownerService.deleteStore(index);
-  }*/
+
 
   addAgent(): void {
     this.addAgentForm = !this.addAgentForm;
@@ -75,20 +59,27 @@ export class CreateOwnerComponent implements OnInit, OnDestroy {
         });
       }
     );
-    // this.newOwner = this.ownerForm.value;
+
     this.newAgent = this.addReceivingAgentForm.value;
     this.saveOwner();
   }
+  gotoStoreDetails(url, id){
+    this.router.navigate([url, id]).then((e)=> {
+      if(e) {
+        console.log('navigation success');
+      } else {
+        console.log('navigation failed')
+      }
+    })
+
+  }
   saveOwner() {
-    // this.newOwner = this.ownerForm.value;
-    /*this.newAgent = this.addReceivingAgentForm.value;
-    this.agentService.addAgent(this.newAgent)
+  this.newOwner = this.ownerForm.value;
+    this.newOwner.ID = this.ownerForm.controls.OwnersPhoneNumber.value;
+    this.ownerService.createOwner(this.newOwner)
       .subscribe(data => {
-        console.log(this.addReceivingAgentForm);
-      });*/
-    this.ownerService.createOwner(this.ownerForm.value)
-      .subscribe(data => {
-        console.log(this.ownerForm.value);
+        console.log(data);
+        this.gotoStoreDetails('/owner-details', this.newOwner.ID);
 
       });
   }

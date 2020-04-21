@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {IntroComponent} from './intro/intro.component';
-import {ScheduleComponent} from './schedule/schedule.component';
+
 import {CreateOwnerComponent} from './owners/create-owner/create-owner.component';
 import {EditOwnersComponent} from './owners/edit-owners/edit-owners.component';
 import {AddStoreComponent} from './stores/add-store/add-store.component';
@@ -11,7 +10,7 @@ import {ListOwnersComponent} from './owners/list-owners/list-owners.component';
 import {GetStoreComponent} from './stores/get-store/get-store.component';
 import {GetOwnerDetailsComponent} from "./owners/get-owner-details/get-owner-details.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {GetPatientsComponent} from "./get-patients/get-patients.component";
+
 import {ListPatientsComponent} from "./list-patients/list-patients.component";
 
 
@@ -25,11 +24,6 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     data: {title: 'Dashboard'}
-  },
-  {
-    path: 'schedule-appointment',
-    component: ScheduleComponent,
-    data: {title: 'Schedule Appointment'}
   },
   {
     path: 'create-owner',
@@ -62,10 +56,6 @@ const routes: Routes = [
   {
     path: 'list-stores/:storeOwnerId',
     component: ListStoresComponent
-  },
-  {
-    path: 'get-patient/:ID',
-    component: GetPatientsComponent
   },
   {
     path: 'list-patients',

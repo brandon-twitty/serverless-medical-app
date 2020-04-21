@@ -1,2 +1,68 @@
-<p>list of stores by owner</p>
+<div class="title-group">
+  <h1 class="mat-h1">Stores List</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<!--<div *ngIf="StoresData.length <= 0" class="no-data">
+  <p>There is no stores added to this owner yet!</p>
+  <app-add-store></app-add-store>
 
+</div>-->
+
+<div class="container" *ngIf="StoresData">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef> Store ID </th>
+        <td mat-cell *matCellDef="let storeData"> {{storeData.ID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="storeContactName">
+        <th mat-header-cell *matHeaderCellDef> Stores First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.storeContactName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="storeAddress">
+        <th mat-header-cell *matHeaderCellDef> Stores Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.storeAdress}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="storePhoneNumber">
+        <th mat-header-cell *matHeaderCellDef> Stores Phone Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.storePhoneNumber}} </td>
+      </ng-container>
+      <ng-container matColumnDef="storeEmail">
+        <th mat-header-cell *matHeaderCellDef> Stores Email Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.storeEmail}} </td>
+      </ng-container>
+      <ng-container matColumnDef="totalScanned">
+        <th mat-header-cell *matHeaderCellDef> Total QR Codes Scanned </th>
+        <td mat-cell *matCellDef="let element"> {{element.qrcodesScanned}} </td>
+      </ng-container>
+      <ng-container matColumnDef="totalBooked">
+        <th mat-header-cell *matHeaderCellDef> # of Paid Appointments </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalBooked}} </td>
+      </ng-container>
+      <ng-container matColumnDef="moneyOwed">
+        <th mat-header-cell *matHeaderCellDef> Money Owed </th>
+        <td mat-cell *matCellDef="let element"> {{element.moneyOwed}} </td>
+      </ng-container>
+      <ng-container matColumnDef="moneyPaid">
+        <th mat-header-cell *matHeaderCellDef> Money Payed  </th>
+        <td mat-cell *matCellDef="let element"> {{element.moneyPaid}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element; let i = index;">
+          <button mat-raised-button color="primary" class="push-right" (click)="gotoStoreDetails('/store-details', element.ID)"
+                  [routerLink]="['/store-details/', element.ID]">Details</button>
+          <!--<button mat-raised-button color="accent" (click)="deleteStore(element.ID)">Delete</button>-->
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

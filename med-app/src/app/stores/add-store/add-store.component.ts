@@ -1,8 +1,9 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, NgZone, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {StoreService} from "../../shared/services/store.service";
 import {Store} from "..";
+import {Owner} from "../../owners/create-owner/_models/owner";
 
 @Component({
   selector: 'app-add-store',
@@ -14,18 +15,23 @@ export class AddStoreComponent implements OnInit {
   storeForm: FormGroup;
   newStore: Store = new Store;
   @Input() index: number;
+  @Input() ID: any;
   @Output() deleteStore: EventEmitter<number> = new EventEmitter();
 
-  constructor(private fb: FormBuilder, private router: Router, private storeService: StoreService,  private ngZone: NgZone) { }
+
+  constructor(private fb: FormBuilder, private router: Router, private storeService: StoreService, private activeRoute: ActivatedRoute, private ngZone: NgZone) { }
 
   ngOnInit(): void {
-    this.addStoreForm()
+    console.log('storeOwnerId', this.ID);
+
+    this.addStoreForm();
+
   }
+
   addStoreForm(){
     this.storeForm = this.fb.group({
-      ID: [''],
+    ID: [''],
     storeOwnerId: [''],
-    storeId: [''],
     storeContactName: [''],
     storeAddress: [''],
     storePhoneNumber: [''],
@@ -42,20 +48,30 @@ export class AddStoreComponent implements OnInit {
   submitStoreForm(){
     this.newStore = this.storeForm.value;
     this.newStore.ID = this.storeForm.controls.storePhoneNumber.value;
-    this.newStore.storeOwnerId = '12345678';
-    this.newStore.storeId = '123456';
-    this.newStore.storeCommissionRate = 15;
     console.log(this.newStore);
-    this.saveStore();
+
+      this.saveStore();
+
+
     return this.newStore;
   }
   saveStore(){
-    let storeOwnerId = this.storeForm.controls.storeOwnerId.value;
-    this.storeService.createStore(this.newStore)
-      .subscribe(data => {
-        console.log(this.newStore);
-        this.ngZone.run(() => this.router.navigateByUrl(`/list-stores/${storeOwnerId}`));
-      })
+    Object.keys(this.ID).some(key => {
+      let ownerId = this.ID[key];
+      console.log('Object Id = ', ownerId);
+      this.newStore.storeOwnerId = ownerId;
+      return this.newStore.storeOwnerId = ownerId;
+    });
+    if (this.newStore.storeOwnerId !== null){
+      this.storeService.createStore(this.newStore)
+        .subscribe(data => {
+          console.log(this.newStore);
+          this.storeForm.reset();
+        })
+    } else {
+      console.log('storeOwnerId was null')
+    }
+
   }
   delete() {
     this.deleteStore.emit(this.index);

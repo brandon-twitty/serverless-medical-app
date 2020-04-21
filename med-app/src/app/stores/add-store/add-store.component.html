@@ -1,52 +1,30 @@
+<app-card>
 <form [formGroup]="storeForm" (ngSubmit)="submitStoreForm()">
   <table>
     <tr>
       <td>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Contact Name</mat-label>
-          <input matInput formControlName="storeContactName" placeholder="Placeholder">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
+        <label>Contact Name</label>
+        <input class="mb-3 form-control" formControlName="storeContactName" placeholder="Contact Name">
       </td>
       <td>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Store Address</mat-label>
-          <input matInput formControlName="storeAddress" placeholder="Store Address">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
+          <label>Store Address</label>
+          <input class="mb-3 form-control" formControlName="storeAddress" placeholder="Store Address">
       </td>
       <td>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Phone Number</mat-label>
-          <input matInput formControlName="storePhoneNumber" placeholder="Store Phone Number">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
+        <label>Phone Number</label>
+         <input class="mb-3 form-control" formControlName="storePhoneNumber" placeholder="Store Phone Number">
       </td>
       <td>
-
-        <mat-form-field appearance="outline">
-          <mat-label>Store Email Address</mat-label>
-          <input matInput formControlName="storeEmail" placeholder="Store Email">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-
+        <label>Store Email Address</label>
+        <input class="mb-3 form-control" formControlName="storeEmail" placeholder="Store Email">
       </td>
       <td>
-        <!-- emit delete event up w/ index of player -->
-        <button (click)="delete()">Delete</button>
+        <label>Store Commission Rate</label>
+        <input class="mb-3 form-control" formControlName="storeCommissionRate" type="number" placeholder="Store Commission Rate">
       </td>
     </tr>
   </table>
-  <button type="submit">Add Store</button>
+  <button class="btn btn-primary" type="submit">Add Store</button>
   <pre>Player Form Status: <span class="status">{{storeForm.status}}</span></pre>
 </form>
+</app-card>

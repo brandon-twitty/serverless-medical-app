@@ -1,14 +1,16 @@
 
-
+@import "scss/style";
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
-/* ngAlert customization */
+/* ngAlert customization*/
 .app-level-alert {
   padding-top: 10px;
 }
-
+label{
+  color: black;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html,body{height:100%;}
@@ -50,4 +52,7 @@ body .push-right{margin-right:10px;}
 }
 @media (max-width:767px){.nav-tool-items{margin-right:0;}
   .hamburger{visibility:visible !important;}
+}
+h1{
+  color: white;
 }

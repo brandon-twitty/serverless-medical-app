@@ -11,7 +11,7 @@ exports.handler = async (event) => {
 const done = response => {
     return {
         statusCode: '200',
-        body: JSON.stringify(response),
+        body: JSON.stringify(response.Items),
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': '*',

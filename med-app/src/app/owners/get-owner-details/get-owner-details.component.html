@@ -1,26 +1,38 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-lg-12 col-md-12 sol-sm-12">
-      <table  class="table table-striped">
-        <tr>
-          <td>Name</td>
-          <td>{{owner.OwnersFirstName}}</td>
-        </tr>
-        <tr>
-          <td>Last Name</td>
-          <td>{{owner.OwnersLastName}}</td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>{{owner.OwnersEmailAddress}}</td>
-        </tr>
-        <tr>
-          <td>action</td>
-          <a routerLink="add-store">add store</a>
-        </tr>
-      </table>
-      <br>
 
-    </div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+  <div class="title-group">
+    <h1 class="mat-h1">Owners Details</h1>
+  </div>
+<app-card cardTitle="Owner" blockClass="table-border-style">
+  <div class="table-responsive">
+    <!-- Name -->
+   <table class="table table-styling table-info" >
+      <thead>
+      <tr>
+        <th> Owners Name </th>
+        <th> Owners Name </th>
+        <th> Owners Phone Number </th>
+        <th> Owners Email Address </th>
+        <th> Owners Store Count </th>
+      </tr>
+      </thead>
+        <tbody>
+        <tr >
+          <td> {{ownerData.OwnersFirstName}} </td>
+          <td> {{ownerData['OwnersLastName']}} </td>
+          <td> {{ownerData['OwnersPhoneNumber']}} </td>
+          <td> {{ownerData['OwnersPhoneNumber']}} </td>
+          <td> {{storeCount}} </td>
+        </tr>
+        </tbody>
+    </table>
+
+  </div>
+</app-card>
+    <app-add-store [ID]="ID"></app-add-store>
+    <app-list-stores [ID]="ID"></app-list-stores>
   </div>
 </div>
+

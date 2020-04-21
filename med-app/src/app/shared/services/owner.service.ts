@@ -5,6 +5,7 @@ import {Owner} from '../../owners/create-owner/_models/owner';
 import {OwnerForm} from '../../owners/create-owner/_models/owner-form.model';
 import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {StoreForm, Store} from '../../stores';
+import {tap} from "rxjs/operators";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -35,15 +36,23 @@ export class OwnerService {
     this.ownerForm.next(currentOwner);
   }
 
-  public  getOwners(): Observable<any> {
-    return this.http.get(this.ownerApi + '/get-owners');
+  public  getOwners() {
+    return this.http.get<any>(this.ownerApi + '/get-owners');
   }
 
   public getOwnerById(ID): Observable<Owner> {
-    return this.http.get<Owner>(`${this.ownerApi}/get-owner/${ID.ID}`, httpOptions);
+    console.log(`${ID.ID}`);
+    return this.http.get<Owner>(`${this.ownerApi}/get-owner/${ID.ID}`, httpOptions).pipe(
+      tap(_=> console.log(Owner))
+    );
 
   }
+  /*getOwnerById(ID): Observable<Owner> {
+    return this.http.get<Owner>(this.ownerApi + '/' + ID)
+  }*/
   public createOwner(owner: Owner) {
+    JSON.stringify(owner);
+    console.log(owner.ID);
     return this.http.post(`${this.ownerApi}/create-owner/${owner.ID}`, owner, httpOptions);
   }
   deleteOwner(ID) {

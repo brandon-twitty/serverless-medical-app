@@ -1,7 +1,6 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
-import { ScheduleComponent } from './schedule/schedule.component';
 import { CreateOwnerComponent } from './owners/create-owner/create-owner.component';
 import { ListOwnersComponent } from './owners/list-owners/list-owners.component';
 import { EditOwnersComponent } from './owners/edit-owners/edit-owners.component';
@@ -20,25 +19,21 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from "@angular/common";
-import {config} from "rxjs";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GetOwnerDetailsComponent } from './owners/get-owner-details/get-owner-details.component';
-
-import {OwnersDataSource} from "./owners/OwnersDataSource";
+// import {OwnersDataSource} from "./owners/OwnersDataSource";
 import {AngularMaterialModule} from "./material/material.module";
-import {SidenavService} from "./shared/sidenav.service";
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { ListPatientsComponent } from './list-patients/list-patients.component';
-import { GetPatientsComponent } from './get-patients/get-patients.component';
-import {RouterModule} from "@angular/router";
+import {MatCardModule} from "@angular/material/card";
+import {SharedModule} from "./theme/shared/shared.module";
+import {MatTableDataSource, MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
-    ScheduleComponent,
     CreateOwnerComponent,
     ListOwnersComponent,
     EditOwnersComponent,
@@ -50,10 +45,9 @@ import {RouterModule} from "@angular/router";
     ListAgentComponent,
     DashboardComponent,
     GetOwnerDetailsComponent,
-    SidenavComponent,
     LeftSidenavComponent,
-    ListPatientsComponent,
-    GetPatientsComponent
+    ListPatientsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -67,8 +61,11 @@ import {RouterModule} from "@angular/router";
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
+    MatCardModule,
+    SharedModule,
+    MatTableModule
   ],
-  providers: [OwnerService, PatientService, StoreService, OwnersDataSource, SidenavService],
+  providers: [OwnerService, PatientService, StoreService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

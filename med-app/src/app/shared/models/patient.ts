@@ -2,12 +2,13 @@ import {Deserializable} from "./deserializable.model";
 
 export class Patient implements Deserializable{
   ID: string;
-  storeUrl: string;
-  firstName: string;
-  lastName: string;
+  storeId: string;
+  patientFirstName: string;
+  patientLastName: string;
   patientPhoneNumber: number;
   patientEmail: string;
   appointmentDate: string;
+  stripeConfirmationId: string;
   dateCreated: Date;
 
   deserialize(input: any): this {

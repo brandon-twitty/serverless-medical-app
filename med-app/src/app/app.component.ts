@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, HostListener, OnInit, ViewChild} fro
 import {Owner} from "./owners/create-owner/_models/owner";
 import {OwnerService} from "./shared/services/owner.service";
 import {HttpClient} from "@angular/common/http";
-import {OwnersDataSource} from "./owners/OwnersDataSource";
+
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router} from "@angular/router";
 import {MatSidenav} from "@angular/material/sidenav";
 import {SidenavService} from "./shared/sidenav.service";
@@ -44,8 +44,8 @@ export class AppComponent implements OnInit {
      this.storeOwnerId = this.selectedOwner.ID;
 
    }
-   getOwnerDetails(ownerId: any) {
-     this.router.navigate((['/get-owner/', ownerId])).then(r =>
+   getOwnerDetails(ID: any) {
+     this.router.navigate((['/get-owner/', ID])).then(r =>
        console.log('next task'));
    }
    gotoOwnersStores(storeOwnerId: any){

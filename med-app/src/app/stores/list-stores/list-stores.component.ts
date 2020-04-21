@@ -1,7 +1,11 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, NgZone, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {StoreService} from "../../shared/services/store.service";
 import {Store} from "..";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+import {MatTableDataSource} from "@angular/material/table";
+import {Owner} from "../../owners/create-owner/_models/owner";
 
 @Component({
   selector: 'app-list-stores',
@@ -9,24 +13,49 @@ import {Store} from "..";
   styleUrls: ['./list-stores.component.scss']
 })
 export class ListStoresComponent implements OnInit {
-  currentOwner = null;
-  store: Store;
-  stores = [];
+  private currentOwner = '';
+  @Input() ID: any;
 
-  constructor(private route: ActivatedRoute, private storeService: StoreService, private router: Router, private ngZone: NgZone,) {
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild('filter',  {static: true}) filter: ElementRef;
 
-   /* let storeOwnerId = this.route.snapshot.paramMap.get('ID');
-    this.storeService.getStoreByOwner(storeOwnerId).subscribe(data => {
-      console.log(data.storeOwnerId)
-    })*/
+  StoresData: any [];
+  dataSource: MatTableDataSource<Store>;
+  ownerStoreId: any;
+
+  public store = [];
+  displayedColumns = ['storeContactName', 'storeAddress', 'storePhoneNumber', 'storeEmail','totalScanned','totalBooked','moneyOwed','moneyPaid', 'action'];
+  constructor(private activeRoute: ActivatedRoute, private storeService: StoreService, private router: Router, private ngZone: NgZone,) {
+
   }
 
   ngOnInit(): void {
+    console.log(JSON.parse(this.ID.ID));
+   this.ownerStoreId = this.ID.ID;
+   this.getListOfOwnersStores(this.ownerStoreId);
+  }
+  getListOfOwnersStores(ownerStoreId){
+    this.storeService.getStoreByOwner(ownerStoreId).subscribe((data:[]) => {
+      console.log(data);
+      this.StoresData = data;
+      this.dataSource = new MatTableDataSource<Store>(this.StoresData);
+      setTimeout(()=> {
+        this.dataSource.paginator = this.paginator;
+      }, 0)
+    });
+}
+  gotoStoreDetails(url, id){
+    this.router.navigate([url, id]).then((e)=> {
+      if(e) {
+        console.log('navigation success');
+      } else {
+        console.log('navigation failed')
+      }
+    })
 
   }
-  getStoresByOwner(storeOwnerId) {
-    console.log(storeOwnerId);
-   this.storeService.getStoreByOwner(storeOwnerId).subscribe(store => this.store = store);
+  addStore(){
 
   }
 }

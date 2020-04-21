@@ -19,8 +19,8 @@ export class Owner  {
  // patients: Patient [];
 
 
- /* constructor(OwnersFirstName: string, OwnersLastName: string, ID: number, OwnersPhoneNumber: number, OwnersEmailAddress: string, OwnersPaymentMethod: string, OwnersCommissionRate: number,
-              ReceivingAgentCommissionRate: number, agentId: number, agents: ReceivingAgent[], stores: Store[], patients: Patient[]) {
+ constructor(OwnersFirstName?: string, OwnersLastName?: string, ID?: number, OwnersPhoneNumber?: number, OwnersEmailAddress?: string, OwnersPaymentMethod?: string, OwnersCommissionRate?: number,
+              ReceivingAgentCommissionRate?: number, agentId?: number, agents?: ReceivingAgent[], stores?: Store[], patients?: Patient[]) {
     this.OwnersFirstName = OwnersFirstName;
     this.OwnersLastName = OwnersLastName;
     this.ID = OwnersPhoneNumber;
@@ -33,7 +33,7 @@ export class Owner  {
     //this.agents = agents;
     //this.stores = stores;
     //this.patients = patients;
-  }*/
+  }
 
   /*deserialize(input: any): this {
     Object.assign(this, input);

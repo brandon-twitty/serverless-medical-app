@@ -3,6 +3,7 @@ import {OwnerService} from "../../shared/services/owner.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Owner} from "../create-owner/_models/owner";
 
+
 @Component({
   selector: 'app-get-owner-details',
   templateUrl: './get-owner-details.component.html',
@@ -10,8 +11,9 @@ import {Owner} from "../create-owner/_models/owner";
 })
 export class GetOwnerDetailsComponent implements OnInit {
   ID: any;
+  ownerData: any;
   owner: Owner;
-
+  storeCount: number;
   constructor(private ownerService: OwnerService, private router: Router, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,10 +21,14 @@ export class GetOwnerDetailsComponent implements OnInit {
      this.ID = params;
      console.log(this.ID)
    });
-      this.ownerService.getOwnerById(this.ID).subscribe((owner: Owner) => {
-        console.log(owner);
-        this.owner = owner;
-      })
+      this.getOwnerDetails(this.ID);
+    }
+    getOwnerDetails(ID){
+      this.ownerService.getOwnerById(ID).subscribe((data: any) => {
+        this.ownerData = data;
+        console.log(this.ownerData);
+      });
+
     }
   addStore() {
 

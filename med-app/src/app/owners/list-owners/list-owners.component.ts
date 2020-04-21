@@ -2,14 +2,13 @@
 import {Owner} from '../create-owner/_models/owner';
 import {OwnerService} from '../../shared/services/owner.service';
 
-import {OwnersDataSource} from '../OwnersDataSource';
 import {Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {CreateOwnerComponent} from "../create-owner/create-owner.component";
 import {Router} from "@angular/router";
 import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
+//import {OwnersDataSource} from "../OwnersDataSource";
 
 
 
@@ -32,7 +31,7 @@ export class ListOwnersComponent implements OnInit {
   owners: Owner[];
   selectedOwner: Owner = new Owner();
   displayedColumns = ['ID', 'OwnersFirstName', 'OwnersLastName', 'OwnersPhoneNumber', 'OwnersEmailAddress', 'action'];
-  ownerDataSource: OwnersDataSource;
+  //ownerDataSource: OwnersDataSource;
   constructor(public ownersService: OwnerService,  private http: HttpClient, private router: Router) {
     this.ownersService.getOwners().subscribe(data => {
       this.OwnerData = data;
@@ -45,7 +44,7 @@ export class ListOwnersComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getOwners();
-    this.ownerDataSource = new OwnersDataSource(this.ownersService);
+    //this.ownerDataSource = new OwnersDataSource(this.ownersService);
 
   }
 
